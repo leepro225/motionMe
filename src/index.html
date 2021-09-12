@@ -13,26 +13,31 @@
         <div class="header-container">
            <div class="header">Motion</div>
            <div class="button-container">
-               <div class="button">IMAGE</div>
-               <div class="button">VIDEO</div>
-               <div class="button">NOTE</div>
-               <div class="button">TASK</div>
+               <div id="imageBtn" class="button" onclick="clickAddBtn(this.id)">IMAGE</div>
+               <div id="videoBtn" class="button" onclick="clickAddBtn(this.id)">VIDEO</div>
+               <div id="noteBtn" class="button" onclick="clickAddBtn(this.id)">NOTE</div>
+               <div id="taskBtn" class="button" onclick="clickAddBtn(this.id)">TASK</div>
            </div>
         </div>
-        <div class="body-container">
-            <div class="contents-container">
-                <div class="image"><img src="../asset/cool-background.png"></div>
-                <div class="title">타이틀입니다.</div>
-                <div class="close"><a>X</a></div>
-            </div>
-            <div class="contents-container">
-                <div class="image">
-                    <video src="https://www.youtube.com/embed/QMlM9c9naXA">
-                    </video>
-                 </div>
-                <div class="title">타이틀입니다.</div>
-                <div class="close"><a>X</a></div>
-            </div>
+        <div id="body" class="body-container">
+        </div>
+    </div>
+    <div id="modal" class="modal-container none">
+        <div class="modal">
+            <div id="viewType" class="none">
+                <div class="title">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" />
+                </div>
+                <div class="title">
+                    <label for="contents">Contents</label>
+                    <input type="text" id="contents" />
+                </div>
+            </div> 
+        <div class="button-container">
+            <div class="button" onclick="clickCloseBtn()">CLOSE</div>
+            <div class="button" onclick="clickSaveBtn()">SAVE</div>
+        </div>
         </div>
     </div>
 </body>

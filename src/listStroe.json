@@ -1,0 +1,22 @@
+[
+    {
+        "type": "image",
+        "title": "",
+        "src": "../asset/cool-background.png"
+    },
+    {
+        "type": "video",
+        "title": "",
+        "src": ""
+    },
+    {
+        "type": "note",
+        "title": "",
+        "contents": ""
+    },
+    {
+        "type": "todo",
+        "title": "",
+        "contents": ""
+    }
+]
