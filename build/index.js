@@ -41,25 +41,27 @@ var clickSaveBtn = function () {
         default:
             break;
     }
-    body === null || body === void 0 ? void 0 : body.appendChild(html);
+    body.innerHTML += html;
     clickCloseBtn();
 };
 var clickRemoveBtn = function (e) {
+    var body = document.getElementById('body');
+    body.removeChild(e.target.parentElement.parentElement);
 };
 var imageContainer = function (title, contents) {
-    var html = "<div class=\"contents-container\">\n                <div class=\"contents\"><img src=\"" + contents + "\"></div>\n                <div class=\"title\">" + title + "</div>\n                <div class=\"close\"><a onclick=\"clickRemoveBtn(e)\">X</a></div>\n            </div>";
+    var html = "<div class=\"contents-container\">\n                <div class=\"contents\"><img src=\"" + contents + "\"></div>\n                <div class=\"title\">" + title + "</div>\n                <div class=\"close\"><a onclick=\"clickRemoveBtn(event)\">X</a></div>\n            </div>";
     return html;
 };
 var videoContainer = function (title, contents) {
-    var html = "<div class=\"contents-container\">\n               <div class=\"contents\">\n                    <iframe width=\"100%\" height=\"100%\" src=\"" + contents + "\" title=\"YouTube video player\"\n                        frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"\n                        allowfullscreen></iframe>\n                 </div>\n                <div class=\"title\">" + title + "</div>\n                <div class=\"close\"><a onclick=\"clickRemoveBtn(e)\">X</a></div>\n            </div>";
+    var html = "<div class=\"contents-container\">\n               <div class=\"contents\">\n                    <iframe width=\"100%\" height=\"100%\" src=\"" + contents + "\" title=\"YouTube video player\"\n                        frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"\n                        allowfullscreen></iframe>\n                 </div>\n                <div class=\"title\">" + title + "</div>\n                <div class=\"close\"><a onclick=\"clickRemoveBtn(event)\">X</a></div>\n            </div>";
     return html;
 };
 var noteContainer = function (title, contents) {
-    var html = "<div class=\"contents-container\">\n                <div class=\"title\">" + title + "</div>\n                <div class=\"body\">" + contents + "</div>\n                <div class=\"close\"><a onclick=\"clickRemoveBtn(e)\">X</a></div>\n            </div>";
+    var html = "<div class=\"contents-container\">\n                <div class=\"title\">" + title + "</div>\n                <div class=\"body\">" + contents + "</div>\n                <div class=\"close\"><a onclick=\"clickRemoveBtn(event)\">X</a></div>\n            </div>";
     return html;
 };
 var todoContainer = function (title, contents) {
-    var html = "<div class=\"contents-container\">\n                <div class=\"title\">" + title + "</div>\n                <div class=\"body\"><input type=\"checkbox\"><label>" + contents + "</label></div>\n                <div class=\"close\"><a onclick=\"clickRemoveBtn(e)\">X</a></div>\n            </div>";
+    var html = "<div class=\"contents-container\">\n                <div class=\"title\">" + title + "</div>\n                <div class=\"body\"><input type=\"checkbox\"><label>" + contents + "</label></div>\n                <div class=\"close\"><a onclick=\"clickRemoveBtn(event)\">X</a></div>\n            </div>";
     return html;
 };
 //# sourceMappingURL=index.js.map

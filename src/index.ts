@@ -30,7 +30,7 @@ const clickCloseBtn = () => {
 
 const clickSaveBtn = () => {
     let html;
-    const body = document.getElementById('body');
+    const body = <HTMLInputElement>document.getElementById('body');
 
     const title = <HTMLInputElement>document.getElementById('title');
     const contents =<HTMLInputElement> document.getElementById('contents');
@@ -48,12 +48,13 @@ const clickSaveBtn = () => {
         break;
     }
 
-    body?.appendChild(html);
+    body.innerHTML += html as string;
     clickCloseBtn();
 }
 
 const clickRemoveBtn = (e: Event) => {
-
+     const body = <HTMLInputElement>document.getElementById('body');
+    body.removeChild(e.target.parentElement.parentElement);
 }
 
 const imageContainer = (title: string, contents: string): string => {
@@ -61,7 +62,7 @@ const imageContainer = (title: string, contents: string): string => {
     const html = `<div class="contents-container">
                 <div class="contents"><img src="${contents}"></div>
                 <div class="title">${title}</div>
-                <div class="close"><a onclick="clickRemoveBtn(e)">X</a></div>
+                <div class="close"><a onclick="clickRemoveBtn(event)">X</a></div>
             </div>`
     return html
 }
@@ -75,7 +76,7 @@ const videoContainer = (title: string, contents: string) => {
                         allowfullscreen></iframe>
                  </div>
                 <div class="title">${title}</div>
-                <div class="close"><a onclick="clickRemoveBtn(e)">X</a></div>
+                <div class="close"><a onclick="clickRemoveBtn(event)">X</a></div>
             </div>`
     return html
 }
@@ -85,7 +86,7 @@ const noteContainer = (title: string, contents: string) => {
     const html = `<div class="contents-container">
                 <div class="title">${title}</div>
                 <div class="body">${contents}</div>
-                <div class="close"><a onclick="clickRemoveBtn(e)">X</a></div>
+                <div class="close"><a onclick="clickRemoveBtn(event)">X</a></div>
             </div>`
     return html
 }
@@ -95,7 +96,7 @@ const todoContainer = (title: string, contents: string) => {
     const html = `<div class="contents-container">
                 <div class="title">${title}</div>
                 <div class="body"><input type="checkbox"><label>${contents}</label></div>
-                <div class="close"><a onclick="clickRemoveBtn(e)">X</a></div>
+                <div class="close"><a onclick="clickRemoveBtn(event)">X</a></div>
             </div>`
     return html
 }
